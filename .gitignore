@@ -1,0 +1,15 @@
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+crash.*.log
+
+*.qcow2
+*.iso
+*.img
+
+*.pem
+*.key
+id_rsa
+id_ed25519
