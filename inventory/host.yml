@@ -5,4 +5,5 @@ all:
         tf-rhel-01:
           ansible_host: 192.168.122.169
           ansible_user: admin
+          ansible_python_interpreter: /usr/bin/python3.9
           ansible_ssh_common_args: "-o ProxyJump=jordan@archbox"
