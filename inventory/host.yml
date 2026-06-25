@@ -1,0 +1,8 @@
+all:
+  children:
+    rhel_vms:
+      hosts:
+        tf-rhel-01:
+          ansible_host: 192.168.122.169
+          ansible_user: admin
+          ansible_ssh_common_args: "-o ProxyJump=jordan@archbox"
