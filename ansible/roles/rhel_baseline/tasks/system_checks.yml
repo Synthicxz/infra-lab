@@ -1,0 +1,42 @@
+---
+- name: Show distribution
+  ansible.builtin.debug:
+    msg: "{{ ansible_facts['distribution'] }} {{ ansible_facts['distribution_version'] }}"
+
+- name: Check hostname
+  ansible.builtin.command: hostnamectl --static
+  register: hostname_result
+  changed_when: false
+
+- name: Show hostname
+  ansible.builtin.debug:
+    var: hostname_result.stdout
+
+- name: Check failed systemd units
+  ansible.builtin.command: systemctl --failed --no-pager
+  register: failed_units
+  changed_when: false
+
+- name: Show failed systemd units
+  ansible.builtin.debug:
+    var: failed_units.stdout_lines
+
+- name: Check SELinux status
+  ansible.builtin.command: getenforce
+  register: selinux_status
+  changed_when: false
+  failed_when: false
+
+- name: Show SELinux status
+  ansible.builtin.debug:
+    var: selinux_status.stdout
+
+- name: Check enabled DNF repositories
+  ansible.builtin.command: dnf repolist
+  register: dnf_repolist
+  changed_when: false
+  failed_when: false
+
+- name: Show DNF repository status
+  ansible.builtin.debug:
+    var: dnf_repolist.stdout_lines
