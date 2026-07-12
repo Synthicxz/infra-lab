@@ -1,0 +1,20 @@
+[Unit]
+Description=CloudOps lab status HTTP service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=<%= $service_user %>
+Group=<%= $service_group %>
+WorkingDirectory=<%= $content_dir %>
+ExecStart=/usr/bin/python3 -m http.server <%= $port %> --bind 0.0.0.0
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target
