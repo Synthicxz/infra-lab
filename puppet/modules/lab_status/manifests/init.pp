@@ -65,7 +65,7 @@ class lab_status (
     enable => true,
    require => [
         Package['python3'],
-        User[$Service_user],
+        User[$service_user],
         File[$content_dir],
         File["${content_dir}/index.html"],
         File['/etc/systemd/system/lab-status.service'],
