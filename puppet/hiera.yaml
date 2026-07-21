@@ -6,5 +6,8 @@ defaults:
   data_hash: yaml_data
 
 hierarchy:
-  - name: "common data"
+  - name: "Node settings" 
+    path: "nodes/%{trusted.certname}.yaml"
+    
+  - name: "Common settings"
     path: "common.yaml"
