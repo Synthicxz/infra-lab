@@ -3,4 +3,3 @@ lab_status::service_user: labstatus
 lab_status::service_group: labstatus
 lab_status::home_dir: /var/lib/lab-status
 lab_status::content_dir: /srv/lab-status
-lab_status::port: 8081

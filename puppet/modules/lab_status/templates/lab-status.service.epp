@@ -1,3 +1,10 @@
+<%- |
+  String  $service_user,
+  String  $service_group,
+  String  $content_dir,
+  Integer $port,
+| -%>
+
 [Unit]
 Description=CloudOps lab status HTTP service
 After=network-online.target

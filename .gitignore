@@ -13,3 +13,7 @@ crash.*.log
 *.key
 id_rsa
 id_ed25519
+
+# Local project documentation and notes
+docs/
+notes/

@@ -63,6 +63,13 @@ class lab_status (
   service { 'lab-status':
     ensure => running,
     enable => true,
+   require => [
+        Package['python3'],
+        User[$Service_user],
+        File[$content_dir],
+        File["${content_dir}/index.html"],
+        File['/etc/systemd/system/lab-status.service'],
+   ], 
   }
 
   Group[$service_group]

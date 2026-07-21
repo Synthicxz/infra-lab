@@ -1,5 +1,5 @@
 variable "vm_name" {
-  description = "Naame of the Terraform-created RHEL VM"
+  description = "Name of the Terraform-created RHEL VM"
   type        = string
   default     = "tf-rhel-01"
 }
